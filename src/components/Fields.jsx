@@ -1,0 +1,3 @@
+export function Field({label,required,children,hint,error}){return <div className="field"><label>{label}{required&&<em> *</em>}</label>{children}{hint&&<small>{hint}</small>}{error&&<p className="error">{error}</p>}</div>}
+export function Check({checked,onChange,label,disabled}){return <label className={`check ${disabled?'disabled':''}`}><input type="checkbox" checked={checked} onChange={e=>onChange(e.target.checked)} disabled={disabled}/><span>{label}</span></label>}
+export function Actions({back,next,nextLabel='繼續',submit=false}){return <div className="actions">{back&&<button className="btn secondary" onClick={back}>返回上一頁</button>}<button className="btn primary" onClick={next}>{submit?'提交問卷':nextLabel}<span>→</span></button></div>}
